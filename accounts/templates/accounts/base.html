@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Naveen Travels | Explore Kerala</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f1f5f9; color: #1e293b; margin: 0; }
+        main { max-width: 360px; margin: 70px auto; padding: 28px; background: white; border-radius: 8px; }
+        h1 { font-size: 24px; }
+        h2 { font-size: 20px; }
+        label { display: block; margin: 16px 0 6px; }
+        input { width: 100%; box-sizing: border-box; padding: 10px; border: 1px solid #94a3b8; border-radius: 4px; }
+        button { width: 100%; margin-top: 20px; padding: 11px; background: #0369a1; color: white; border: 0; border-radius: 4px; cursor: pointer; }
+        a { color: #0369a1; }
+        .button { display: inline-block; padding: 11px 22px; margin: 8px 8px 8px 0; background: #0369a1; color: white; border-radius: 4px; text-decoration: none; }
+        .secondary { background: #e0f2fe; color: #075985; }
+        .brand { color: inherit; text-decoration: none; }
+        .error { color: #b91c1c; }
+        @media (max-width: 440px) { main { margin: 30px 16px; padding: 20px; } }
+    </style>
+</head>
+<body>
+    <main>
+        <h1><a class="brand" href="{% url 'landing' %}">Naveen Travels</a></h1>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

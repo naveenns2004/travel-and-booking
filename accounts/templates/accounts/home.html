@@ -1,0 +1,10 @@
+{% extends "accounts/base.html" %}
+{% block content %}
+<h2>Welcome{% if request.user.first_name %}, {{ request.user.first_name }}{% endif %}!</h2>
+<p>Your Kerala journey starts here. Explore Alappuzha, Munnar, and Varkala on our <a href="{% url 'landing' %}#destinations">Kerala destination guide</a>.</p>
+<p>You are logged in as {{ request.user.email }}.</p>
+<form method="post" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <button type="submit">Log out</button>
+</form>
+{% endblock %}

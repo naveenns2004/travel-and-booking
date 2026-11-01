@@ -1,0 +1,15 @@
+{% extends "accounts/base.html" %}
+{% block content %}
+<h2>Customer Login</h2>
+{% if error %}<p class="error" role="alert">{{ error }}</p>{% endif %}
+<form method="post">
+    {% csrf_token %}
+    <label for="email">Email</label>
+    <input id="email" type="email" name="email" value="{{ email }}" maxlength="150" autocomplete="email" required>
+    <label for="password">Password</label>
+    <input id="password" type="password" name="password" autocomplete="current-password" required>
+    <button type="submit">Customer Login</button>
+</form>
+<p>New here? <a href="{% url 'register' %}">Customer Registration</a></p>
+<p><a href="{% url 'admin:login' %}">Login as Admin</a></p>
+{% endblock %}
